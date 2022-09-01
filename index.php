@@ -12,6 +12,11 @@
 <body>
   <?php include './includes/header.php' ?>
 
+
+  <script>
+    const active = document.getElementById("link-home");
+    active.classList.add("current");
+  </script>
 </body>
 
 </html>

@@ -35,6 +35,11 @@
       </form>
     </div>
   </main>
+
+  <script>
+    const active = document.getElementById("link-login");
+    active.classList.add("current");
+  </script>
 </body>
 
 </html>
