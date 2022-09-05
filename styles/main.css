@@ -214,6 +214,408 @@ body {
 
 /* End header, navbar, burger menu styles */
 
+/* Start home page styles */
+
+.home-container {
+  width: 100%;
+  height: max-content;
+  position: relative;
+}
+
+#home-title-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: rgb(0, 125, 237);
+  background: linear-gradient(180deg, rgb(0, 136, 255) 0%, rgb(0, 39, 83) 100%);
+}
+
+#home-title-container h1 {
+  font-size: 4.5rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+#home-title-container p {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+#arrow-down {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#arrow-down svg {
+  stroke: black;
+  animation: arrow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+#mini-services-container {
+  width: 100%;
+  height: max-content;
+  padding: 2rem;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+#mini-services-container h2,
+#hospedaje-section h2,
+#guides-section h2,
+#food-section h2,
+#transport-section h2 {
+  width: 100%;
+  padding: 4rem 2rem;
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+#even-min-cards,
+#odd-mini-cards {
+  width: 45%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+#even-min-cards {
+  align-items: flex-end;
+}
+
+#odd-mini-cards {
+  align-items: flex-start;
+  transform: translateY(60px);
+}
+
+.mini-service-card {
+  min-width: 290px;
+  width: 60%;
+  max-width: 400px;
+  height: 50vh;
+  border-radius: 20px;
+  background-color: rgb(241, 241, 241);
+  box-shadow: 10px 10px 0 0 rgb(212, 212, 212);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.mini-service-card img {
+  object-fit: cover;
+  width: 100%;
+  height: 80%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.mini-service-card a {
+  display: block;
+  width: 100%;
+  height: 20%;
+  font-size: 2rem;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transition: all 300ms;
+}
+
+.mini-service-card a:hover {
+  background-color: rgb(48, 48, 48);
+  color: white;
+}
+
+#hospedaje-section {
+  width: 100%;
+  height: max-content;
+  padding: 2rem;
+  margin-top: 100px;
+}
+
+#hospedaje-section > p,
+#guides-section > p,
+#food-section > p,
+#transport-section > p {
+  font-size: 2rem;
+  text-align: center;
+}
+
+#hospedaje-cards-container {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hospedaje-card {
+  min-width: 290px;
+  width: 80%;
+  max-width: 600px;
+  min-height: 500px;
+  height: 80vh;
+  max-height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  background-color: rgb(241, 241, 241);
+  box-shadow: -10px 10px 0 0 rgb(212, 212, 212);
+  margin-top: 3rem;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.hospedaje-card img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.hospedaje-card p {
+  width: 100%;
+  height: 40%;
+  font-size: 1.8rem !important;
+}
+
+.hospedaje-card a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 10%;
+  font-size: 1.8rem !important;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: solid 2px black;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  line-height: 0;
+  transition: all 300ms;
+}
+
+.hospedaje-card a:hover {
+  background-color: rgba(0, 0, 0, 1);
+  color: white;
+}
+
+#guides-section {
+  width: 100%;
+  height: max-content;
+  margin-top: 2rem;
+  padding: 0;
+}
+
+#guides-collage {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 2rem;
+}
+
+#guides-collage img {
+  grid-column: span 1;
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+}
+
+#tour-overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+#guides-collage:hover #tour-overlay {
+  display: flex;
+}
+
+#tour-overlay a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px) saturate(200%);
+  -webkit-backdrop-filter: blur(5px) saturate(200%);
+  background-color: rgba(0, 0, 0, 0.3);
+  border: solid 2px rgb(255, 255, 255);
+  padding: 2rem 3rem;
+  font-size: 2rem !important;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 300ms;
+}
+
+#tour-overlay a:hover {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+#food-section {
+  width: 100%;
+  height: max-content;
+  margin-top: 2rem;
+  padding: 0 2rem;
+}
+
+#food-cards-container {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  margin-top: 4rem;
+}
+
+.food-card {
+  width: 290px;
+  height: 290px;
+  border-radius: 100%;
+  position: relative;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.food-card:hover .food-overlay {
+  display: flex;
+}
+
+.food-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.food-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  font-size: 1.8rem;
+  color: white;
+  backdrop-filter: blur(3px) saturate(90%);
+  -webkit-backdrop-filter: blur(3px) saturate(90%);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#transport-section {
+  width: 100%;
+  height: max-content;
+  margin-top: 2rem;
+}
+
+#transport-desc-container {
+  margin-top: 3rem;
+  width: 100%;
+  height: 70vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 70vh;
+}
+
+#transport-desc-container img {
+  grid-column: span 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#transport-desc-container > p {
+  grid-column: span 1;
+  width: 100%;
+  height: 100%;
+  font-size: 3rem;
+  background-color: rgb(0, 32, 68);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  text-align: center;
+}
+#transport-desc-container p > span {
+  font-size: 4.5rem;
+  font-weight: 900;
+}
+
+.small-text {
+  margin: 1rem 0;
+  font-size: 1.3rem !important;
+}
+
+@keyframes arrow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(15px);
+  }
+}
+
+/* @media only screen and (max-width: 1100px) {
+  .mini-service-card {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  
+} */
+
+/* End home page styles */
+
 /* Start global form styles */
 .form-main-container {
   position: relative;
