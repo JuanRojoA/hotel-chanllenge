@@ -1,6 +1,6 @@
 <header id="header">
   <div id="trademark">
-    <span id="trademark-text">Hotel Kyoto</span>
+    <span id="trademark-text"><span>Hotel</span> Kyoto</span>
     <!-- <img src="" alt="logo trademark"> -->
   </div>
   <nav id="navbar">
