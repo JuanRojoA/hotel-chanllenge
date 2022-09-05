@@ -5,12 +5,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iniciar Sesión</title>
+  <title>Registrarse</title>
   <?php include './includes/styles.php' ?>
 </head>
 
 <body>
   <?php include './includes/header.php' ?>
+
+  <div id="snackbar"></div>
 
   <main class="form-main-container">
     <div class="form-img-container">
@@ -35,12 +37,12 @@
           <input type="number" name="document-number" id="document-number">
         </div>
         <div class="input-container select-container">
-          <label for="document-type">Nacionalidad</label>
-          <select name="document-type" id="document-type" class="form-select">
+          <label for="nationality-select">Nacionalidad</label>
+          <select name="nationality" id="nationality-select">
             <option value="0" selected disabled></option>
             <?php
             include './includes/paises.php';
-            foreach ($paises as $pais) :
+            foreach ($paises as $key => $pais) :
             ?>
               <option value="<?php echo $pais; ?>"><?php echo $pais; ?></option>
             <?php endforeach; ?>
@@ -77,6 +79,27 @@
   <script>
     const active = document.getElementById("link-signin");
     active.classList.add("current");
+  </script>
+
+  <script>
+    let err = '<?php echo $_GET['err']; ?>';
+    if (err) {
+      let x = document.getElementById("snackbar");
+      switch (err) {
+        case '1':
+          x.innerHTML = "Ocurrio un error al registrarse. Por favor revisa los datos ingresados e intentalo de nuevo.";
+          break;
+        case '2':
+          x.innerHTML = "Las contraseñas no coinciden. Por favor vuelva a intentarlo.";
+          break;
+        default:
+          alert("DEFAULTTTTT");
+      }
+      x.className = "show";
+      setTimeout(function() {
+        x.className = x.className.replace("show", "");
+      }, 3000);
+    }
   </script>
 </body>
 

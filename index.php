@@ -1,3 +1,14 @@
+<?php
+require './config/database.php';
+$db = new Database();
+$con = $db->connection();
+
+$query = $con->prepare("SELECT * FROM hoteles");
+$query->execute();
+$items = $query->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -52,23 +63,15 @@
 
     <section id="hospedaje-section">
       <h2>Hospedaje</h2>
-      <p>Conoce nuestras mejores ofertas de hospedaje para ti</p>
+      <p>Conoce nuestros hoteles, sus servicios y precios.</p>
       <div id="hospedaje-cards-container">
-        <div class="hospedaje-card">
-          <img src="https://picsum.photos/1000" alt="">
-          <p>Ubicación <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, omnis! Recusandae architecto corporis assumenda fugit ratione, animi reprehenderit, illo ab consequatur distinctio nobis et fuga odio quis vitae alias? Quisquam.</p>
-          <a href="#">Reservar</a>
-        </div>
-        <div class="hospedaje-card">
-          <img src="https://picsum.photos/1000" alt="">
-          <p>Ubicación <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, omnis! Recusandae architecto corporis assumenda fugit ratione, animi reprehenderit, illo ab consequatur distinctio nobis et fuga odio quis vitae alias? Quisquam.</p>
-          <a href="#">Reservar</a>
-        </div>
-        <div class="hospedaje-card">
-          <img src="https://picsum.photos/1000" alt="">
-          <p>Ubicación <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, omnis! Recusandae architecto corporis assumenda fugit ratione, animi reprehenderit, illo ab consequatur distinctio nobis et fuga odio quis vitae alias? Quisquam.</p>
-          <a href="#">Reservar</a>
-        </div>
+        <?php foreach ($items as $hotel) : ?>
+          <div class="hospedaje-card">
+            <img src="<?php echo $hotel['img'] ?>" alt="">
+            <p> <b><?php echo $hotel['nom_hotel'] ?></b> <br> <i><?php echo $hotel['direccion'] ?></i> <br> <?php echo $hotel['descrip'] ?></p>
+            <a href="hotel.php?hotel=<?php echo $hotel['id_hotel'] ?>">Reservar</a>
+          </div>
+        <?php endforeach; ?>
       </div>
     </section>
 
