@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 06, 2022 at 02:55 AM
+-- Generation Time: Sep 06, 2022 at 04:43 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -13,7 +13,6 @@ SET time_zone = "+00:00";
 
 CREATE DATABASE hotelbd;
 USE hotelbd;
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -74,8 +73,8 @@ CREATE TABLE `reservaciones` (
 --
 
 INSERT INTO `reservaciones` (`id_reservacion`, `num_doc`, `id_hotel`, `personas`, `ninos`, `menores`, `fec_entrada`, `fec_salida`, `plan_turistico`, `precio`, `total`, `estado`) VALUES
-('6316998854a55', '1001773808', '631672f9ea59f', 1, 1, 1, '2022-09-05', '2022-09-09', 1, 230000, 2346000, 0),
-('63169a0fea4f9', '1001773808', '631672e7c00ad', 2, 2, 1, '2022-09-14', '2022-09-16', 1, 170000, 3604000, 0);
+('6316998854a55', '1001773808', '631672f9ea59f', 1, 1, 1, '2022-09-05', '2022-09-09', 1, 230000, 2346000, 2),
+('63169a0fea4f9', '1001773808', '631672e7c00ad', 2, 2, 1, '2022-09-14', '2022-09-16', 1, 170000, 3604000, 1);
 
 -- --------------------------------------------------------
 
