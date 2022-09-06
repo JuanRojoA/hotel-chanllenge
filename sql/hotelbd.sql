@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 06, 2022 at 12:12 AM
+-- Generation Time: Sep 06, 2022 at 02:55 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -13,6 +13,7 @@ SET time_zone = "+00:00";
 
 CREATE DATABASE hotelbd;
 USE hotelbd;
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -34,17 +35,18 @@ CREATE TABLE `hoteles` (
   `descrip` tinytext NOT NULL,
   `servicios` text NOT NULL,
   `img` text CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
-  `direccion` varchar(150) NOT NULL
+  `direccion` varchar(150) NOT NULL,
+  `precio` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `hoteles`
 --
 
-INSERT INTO `hoteles` (`id_hotel`, `nom_hotel`, `descrip`, `servicios`, `img`, `direccion`) VALUES
-('631672e7c00ad', 'Hotel Kyoto Plaza Grande', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati quidem quod dicta sit eos! Quisquam consectetur est commodi facilis, laboriosam, molestias ab veniam nulla corporis veritatis, omnis reprehenderit id incidunt?', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati quidem quod dicta sit eos! Quisquam consectetur est commodi facilis, laboriosam, molestias ab veniam nulla corporis veritatis, omnis reprehenderit id incidunt?', 'https://picsum.photos/id/1029/4887/2759', 'Cartagena, Colombia.'),
-('631672f9ea59f', 'Hotel Kyoto Ciudades Industriales', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique libero nisi atque aliquid amet ea, quas quod nesciunt maiores eum dolorum animi provident explicabo omnis esse laudantium quidem beatae dolor.', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique libero nisi atque aliquid amet ea, quas quod nesciunt maiores eum dolorum animi provident explicabo omnis esse laudantium quidem beatae dolor.', 'https://picsum.photos/id/1033/2048/1365', 'Bogota, Colombia.'),
-('631672f9ea5a6', 'Hotel Kyoto Bellas Flores', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique libero nisi atque aliquid amet ea, quas quod nesciunt maiores eum dolorum animi provident explicabo omnis esse laudantium quidem beatae dolor.', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique libero nisi atque aliquid amet ea, quas quod nesciunt maiores eum dolorum animi provident explicabo omnis esse laudantium quidem beatae dolor.', 'https://picsum.photos/id/1031/5446/3063', 'Medellín, Colombia.');
+INSERT INTO `hoteles` (`id_hotel`, `nom_hotel`, `descrip`, `servicios`, `img`, `direccion`, `precio`) VALUES
+('631672e7c00ad', 'Hotel Kyoto Plaza Grande', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati quidem quod dicta sit eos! Quisquam consectetur est commodi facilis, laboriosam, molestias ab veniam nulla corporis veritatis, omnis reprehenderit id incidunt?', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati quidem quod dicta sit eos! Quisquam consectetur est commodi facilis, laboriosam, molestias ab veniam nulla corporis veritatis, omnis reprehenderit id incidunt?', 'https://picsum.photos/id/1029/4887/2759', 'Cartagena, Colombia.', 170000),
+('631672f9ea59f', 'Hotel Kyoto Ciudades Industriales', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique libero nisi atque aliquid amet ea, quas quod nesciunt maiores eum dolorum animi provident explicabo omnis esse laudantium quidem beatae dolor.', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique libero nisi atque aliquid amet ea, quas quod nesciunt maiores eum dolorum animi provident explicabo omnis esse laudantium quidem beatae dolor.', 'https://picsum.photos/id/1033/2048/1365', 'Bogota, Colombia.', 230000),
+('631672f9ea5a6', 'Hotel Kyoto Bellas Flores', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique libero nisi atque aliquid amet ea, quas quod nesciunt maiores eum dolorum animi provident explicabo omnis esse laudantium quidem beatae dolor.', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique libero nisi atque aliquid amet ea, quas quod nesciunt maiores eum dolorum animi provident explicabo omnis esse laudantium quidem beatae dolor.', 'https://picsum.photos/id/1031/5446/3063', 'Medellín, Colombia.', 120000);
 
 -- --------------------------------------------------------
 
@@ -55,17 +57,25 @@ INSERT INTO `hoteles` (`id_hotel`, `nom_hotel`, `descrip`, `servicios`, `img`, `
 CREATE TABLE `reservaciones` (
   `id_reservacion` varchar(15) NOT NULL,
   `num_doc` varchar(15) NOT NULL,
-  `id_hotel` varchar(10) NOT NULL,
+  `id_hotel` varchar(13) NOT NULL,
   `personas` tinyint(4) NOT NULL,
   `ninos` tinyint(4) NOT NULL,
   `menores` tinyint(4) NOT NULL,
   `fec_entrada` date NOT NULL,
   `fec_salida` date NOT NULL,
-  `noches` tinyint(4) NOT NULL,
+  `plan_turistico` tinyint(4) NOT NULL,
   `precio` float NOT NULL,
   `total` float NOT NULL,
   `estado` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `reservaciones`
+--
+
+INSERT INTO `reservaciones` (`id_reservacion`, `num_doc`, `id_hotel`, `personas`, `ninos`, `menores`, `fec_entrada`, `fec_salida`, `plan_turistico`, `precio`, `total`, `estado`) VALUES
+('6316998854a55', '1001773808', '631672f9ea59f', 1, 1, 1, '2022-09-05', '2022-09-09', 1, 230000, 2346000, 0),
+('63169a0fea4f9', '1001773808', '631672e7c00ad', 2, 2, 1, '2022-09-14', '2022-09-16', 1, 170000, 3604000, 0);
 
 -- --------------------------------------------------------
 
@@ -107,7 +117,8 @@ ALTER TABLE `hoteles`
 --
 ALTER TABLE `reservaciones`
   ADD PRIMARY KEY (`id_reservacion`),
-  ADD KEY `num_doc` (`num_doc`);
+  ADD KEY `num_doc` (`num_doc`),
+  ADD KEY `id_hotel` (`id_hotel`);
 
 --
 -- Indexes for table `usuarios`
@@ -123,7 +134,8 @@ ALTER TABLE `usuarios`
 -- Constraints for table `reservaciones`
 --
 ALTER TABLE `reservaciones`
-  ADD CONSTRAINT `reservaciones_ibfk_1` FOREIGN KEY (`num_doc`) REFERENCES `usuarios` (`num_doc`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `reservaciones_ibfk_1` FOREIGN KEY (`num_doc`) REFERENCES `usuarios` (`num_doc`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `reservaciones_ibfk_2` FOREIGN KEY (`id_hotel`) REFERENCES `hoteles` (`id_hotel`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

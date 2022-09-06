@@ -9,7 +9,9 @@
       <a href="about.php" class="nav-link" id="link-about">Acerca de nosotros</a>
       <a href="contact.php" class="nav-link" id="link-contact">Contacto</a>
       <?php
-      session_start();
+      if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+      }
 
       if (isset($_SESSION['admin'])) {
         if ($_SESSION['admin'] == 1) {
