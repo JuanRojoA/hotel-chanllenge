@@ -23,5 +23,5 @@ try {
   $result = $query->execute([$reservationID, $documentNumber, $hotelID, $people, $children, $minors, $fecStart, $fecEnd, $tourType, $price, $totalPrice, 0]);
   header("Location: /hotel/hotel.php?state=1&hotel=$hotelID");
 } catch (PDOException $e) {
-  header("Location: /hotel/hotel.php?state=0");
+  header("Location: /hotel/hotel.php?state=0&hotel=$hotelID");
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 06, 2022 at 04:43 AM
+-- Generation Time: Sep 06, 2022 at 05:12 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -11,8 +11,10 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+
 CREATE DATABASE hotelbd;
 USE hotelbd;
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -74,7 +76,8 @@ CREATE TABLE `reservaciones` (
 
 INSERT INTO `reservaciones` (`id_reservacion`, `num_doc`, `id_hotel`, `personas`, `ninos`, `menores`, `fec_entrada`, `fec_salida`, `plan_turistico`, `precio`, `total`, `estado`) VALUES
 ('6316998854a55', '1001773808', '631672f9ea59f', 1, 1, 1, '2022-09-05', '2022-09-09', 1, 230000, 2346000, 2),
-('63169a0fea4f9', '1001773808', '631672e7c00ad', 2, 2, 1, '2022-09-14', '2022-09-16', 1, 170000, 3604000, 1);
+('63169a0fea4f9', '1001773808', '631672e7c00ad', 2, 2, 1, '2022-09-14', '2022-09-16', 1, 170000, 3604000, 1),
+('6316b88cbd2d2', '123456', '631672e7c00ad', 2, 0, 0, '2022-09-15', '2022-09-14', 1, 170000, 3400000, 1);
 
 -- --------------------------------------------------------
 
@@ -99,6 +102,7 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`tipo_doc`, `num_doc`, `nacionalidad`, `nombre`, `num_cel`, `email`, `password_hash`, `super`) VALUES
 (1, '1001773808', 'Colombia', 'Juan Rojo', 38519762835, 'jjrojoa@gmail.com', '$2y$10$AaCP8RrnTNF9BQLqHnPY0eEHAMvt3aYNdhNqQDQ/TxFHQ/Z0n5U12', 1),
+(1, '123456', 'Austria', 'Pepito Perez', 43653635, 'jjrojoa@gmail.com', '$2y$10$JXD5iY96RPyiUDNxhoSGT.FI5QsvHx/u9w9N8QTwK9Jnl..UX8GIS', 0),
 (1, '12345678', 'Colombia', 'Juan Rojo', 57655634, 'jjrojoa@gmail.com', '$2y$10$KJ3HhPu6P0UDxLaiWPMQEOCN5p95o3LngTyqT0H/AhM0UY5xKXN7a', 0);
 
 --
