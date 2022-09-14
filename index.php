@@ -126,7 +126,9 @@ $items = $query->fetchAll(PDO::FETCH_ASSOC);
       <h2>Transportación</h2>
       <p>Como parte de tu paquete de hospedaje incluimos transportación desde tu lugar de llegada a nuestros hoteles.*</p>
       <div id="transport-desc-container">
-        <img src="https://picsum.photos/1000" alt="">
+        <div id="trasnsport-desc-img">
+          <img src="https://picsum.photos/1000" alt="">
+        </div>
         <p><span>¿Preocuparse por el transporte?</span> Con Hotel Kyoto eso es cosa del pasado.</p>
       </div>
       <p class="small-text">*Aplican terminos y condiciones. Disponible en paquetes con un valor total previo a descuentos e impuestos de más de $1000000 (un millón) de pesos.</p>

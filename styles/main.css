@@ -414,6 +414,10 @@ body {
   text-align: center;
 }
 
+#guides-section > h2 {
+  padding: 4rem 4rem 0.5rem 4rem;
+}
+
 .home-container h2::after {
   content: "";
   position: absolute;
@@ -433,9 +437,14 @@ body {
 #food-section > p,
 #transport-section > p {
   width: 100%;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
-  padding: 0 2rem;
+  padding: 1rem 2rem 0 2rem;
+}
+
+#transport-section > p,
+#guides-section > p {
+  padding: 1rem 4rem 0 4rem;
 }
 
 #mini-services-container {
@@ -453,7 +462,8 @@ body {
 
 #even-min-cards,
 #odd-mini-cards {
-  width: 45%;
+  width: 90%;
+  max-width: 400px;
   height: max-content;
   display: flex;
   flex-direction: column;
@@ -472,8 +482,8 @@ body {
 }
 
 .mini-service-card {
-  min-width: 290px;
-  width: 90%;
+  min-width: 200px;
+  width: 95%;
   max-width: 400px;
   height: 300px;
   display: flex;
@@ -594,8 +604,8 @@ body {
 }
 
 .hospedaje-card a:hover {
-  background-color: rgba(0, 0, 0, 1);
-  color: white;
+  background-color: var(--black-color);
+  color: var(--white-color);
 }
 
 #guides-section {
@@ -643,26 +653,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem 3rem;
+  font-size: 2rem;
+  text-align: center;
+  text-decoration: none;
   backdrop-filter: blur(5px) saturate(200%);
   -webkit-backdrop-filter: blur(5px) saturate(200%);
-  background-color: rgba(0, 0, 0, 0.3);
-  border: solid 2px rgb(255, 255, 255);
-  padding: 2rem 3rem;
-  font-size: 2rem !important;
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  border-radius: 10px;
+  background-color: var(--lighter-semi-transparent-black-color);
+  border: solid 2px var(--white-color);
+  color: var(--white-color);
+  border-radius: var(--big-border-radius);
   transition: all 300ms;
 }
 
 #tour-overlay a:hover {
-  background-color: rgba(0, 0, 0, 1);
+  background-color: var(--black-color);
 }
 
 #food-section {
   width: 100%;
   height: max-content;
-  margin-top: 2rem;
+  margin-top: 3rem;
   padding: 0 2rem;
 }
 
@@ -679,15 +690,11 @@ body {
 }
 
 .food-card {
-  width: 290px;
-  height: 290px;
-  border-radius: 100%;
   position: relative;
-  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
-}
-
-.food-card:hover .food-overlay {
-  display: flex;
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+  box-shadow: 5px 5px 5px 0 var(--semi-transparent-black-color);
 }
 
 .food-card img {
@@ -698,6 +705,7 @@ body {
 }
 
 .food-overlay {
+  user-select: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -709,78 +717,159 @@ body {
   align-items: center;
   padding: 1rem;
   font-size: 1.8rem;
-  color: white;
-  backdrop-filter: blur(3px) saturate(90%);
-  -webkit-backdrop-filter: blur(3px) saturate(90%);
-  background-color: rgba(0, 0, 0, 0.4);
+  color: var(--white-color);
+  backdrop-filter: blur(3px) saturate(50%);
+  -webkit-backdrop-filter: blur(3px) saturate(50%);
+  background-color: var(--semi-transparent-black-color);
+}
+
+.food-card:hover .food-overlay {
+  display: flex;
 }
 
 #transport-section {
   width: 100%;
   height: max-content;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 #transport-desc-container {
   margin-top: 3rem;
   width: 100%;
-  height: 70vh;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 70vh;
+  height: max-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+
+#trasnsport-desc-img {
+  min-width: 290px;
+  width: 50%;
+  height: 350px;
 }
 
 #transport-desc-container img {
-  grid-column: span 1;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 #transport-desc-container > p {
-  grid-column: span 1;
-  width: 100%;
-  height: 100%;
-  font-size: 3rem;
-  background-color: rgb(0, 32, 68);
-  color: white;
+  min-width: 290px;
+  width: 50%;
+  height: 350px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem;
+  padding: 2rem;
+  font-size: 2rem;
   text-align: center;
+  background-color: var(--darker-blue-color);
+  color: var(--white-color);
 }
+
 #transport-desc-container p > span {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: 900;
 }
 
 .small-text {
   margin: 1rem 0;
+  padding: 0 2rem !important;
   font-size: 1.3rem !important;
 }
 
-@keyframes arrow {
-  0%,
-  100% {
-    transform: translateY(0);
+@media only screen and (max-width: 1024px) {
+  #home-title-container h1 {
+    font-size: 4rem;
+    font-weight: 700;
   }
 
-  50% {
-    transform: translateY(15px);
+  #home-title-container p {
+    font-size: 1.8rem;
   }
-}
 
-/* @media only screen and (max-width: 1100px) {
-  .mini-service-card {
-    width: 80%;
+  .home-container h2 {
+    font-size: 3.5rem;
   }
 }
 
-@media only screen and (max-width: 750px) {
-  
-} */
+@media only screen and (max-width: 880px) {
+  #even-min-cards {
+    align-items: center;
+  }
+
+  #odd-mini-cards {
+    align-items: center;
+    transform: translateY(0px);
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  #mini-services-container {
+    gap: 2rem;
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  #home-title-container h1 {
+    font-size: 3.5rem;
+  }
+
+  #home-title-container p {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  #home-title-container h1 {
+    font-size: 3.5rem;
+  }
+
+  #home-title-container p {
+    font-size: 1.5rem;
+  }
+
+  #trasnsport-desc-img {
+    width: 100%;
+  }
+
+  #transport-desc-container > p {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  #home-title-container h1 {
+    font-size: 3rem;
+    line-height: 32px;
+  }
+
+  #home-title-container p {
+    line-height: 17px;
+  }
+
+  .home-container h2 {
+    font-size: 3rem;
+    padding: 4rem 0rem 0.5rem 0rem;
+  }
+
+  #hospedaje-section > p,
+  #guides-section > p,
+  #food-section > p,
+  #transport-section > p {
+    padding: 1rem 0rem 0 0rem;
+  }
+
+  #transport-section > p,
+  #guides-section > p {
+    padding: 1rem 2rem 0 2rem;
+  }
+}
 
 /* End home page styles */
 
