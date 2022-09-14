@@ -937,7 +937,7 @@ body {
   border: none;
   border: solid 2px rgba(0, 0, 0, 0.7);
   outline-color: rgb(110, 190, 255);
-  outline-offset: 2px;
+  outline-offset: 0px;
 }
 
 .input-container textarea {
@@ -960,7 +960,7 @@ body {
   font-size: 1.5rem;
   padding: 0 1rem;
   outline-color: rgb(110, 190, 255);
-  outline-offset: 2px;
+  outline-offset: 0px;
 }
 
 .select-container::after {
@@ -1402,6 +1402,7 @@ body {
   height: max-content;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 3rem;
@@ -1410,8 +1411,8 @@ body {
 
 #hotel-main-details-container,
 #hotel-side-details-container {
-  min-width: 45%;
-  max-width: 50%;
+  min-width: 400px;
+  width: 45%;
   min-height: calc(100vh - 80px);
   height: max-content;
   display: flex;
@@ -1482,7 +1483,7 @@ body {
 #reservation-form .input-container {
   min-width: 290px;
   width: 90%;
-  max-width: 600px;
+  max-width: 500px;
   margin: 0;
   padding: 0;
   gap: 1rem;
