@@ -69,7 +69,9 @@ $items = $query->fetchAll(PDO::FETCH_ASSOC);
           <div class="hospedaje-card">
             <img src="<?php echo $hotel['img'] ?>" alt="">
             <p> <b><?php echo $hotel['nom_hotel'] ?></b> <br> <i><?php echo $hotel['direccion'] ?></i> <br> <?php echo $hotel['descrip'] ?></p>
-            <a href="hotel.php?hotel=<?php echo $hotel['id_hotel'] ?>">Reservar</a>
+            <div class="hotel-link-container">
+              <a href="hotel.php?hotel=<?php echo $hotel['id_hotel'] ?>">Reservar</a>
+            </div>
           </div>
         <?php endforeach; ?>
       </div>
