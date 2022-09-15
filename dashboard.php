@@ -77,8 +77,8 @@ if ($_SESSION['admin'] == 0) {
             </div>
             <div class="cell" data-title="Acciones">
               <?php if ($item['estado'] == 0) : ?>
-                <a href="./actions/state.php?id=<?php echo $item['id_reservacion']; ?>&state=1" class="table-btn">Aceptar</a>
-                <a href="./actions/state.php?id=<?php echo $item['id_reservacion']; ?>&state=2" class="table-btn">Rechazar</a>
+                <a href="./actions/state.php?id=<?php echo $item['id_reservacion']; ?>&state=1&id_user=<?php echo $item['num_doc']; ?>" class="table-btn">Aceptar</a>
+                <a href="./actions/state.php?id=<?php echo $item['id_reservacion']; ?>&state=2&id_user=<?php echo $item['num_doc']; ?>" class="table-btn">Rechazar</a>
               <?php endif; ?>
               <?php if (!$item['estado'] == 0) : ?>
                 <p>No hay acciones a realizar</p>
