@@ -62,7 +62,7 @@
           x.innerHTML = "Error al iniciar sesión. Query fallido.";
           break;
         default:
-          alert("DEFAULTTTTT");
+          alert("Hmmm algo salió mal. Por favor inténtalo más tarde.");
       }
       x.className = "show";
       setTimeout(function() {
